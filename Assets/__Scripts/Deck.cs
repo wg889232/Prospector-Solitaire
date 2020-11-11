@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
+    public Sprite suitClub;
+    public Sprite suitDiamond;
+    public Sprite suitHeart;
+    public Sprite suitSpade;
+
+    public Sprite[] faceSprites;
+    public Sprite[] rankSprites;
+
+    public Sprite cardBack;
+    public Sprite cardBackGold;
+    public Sprite cardFront;
+    public Sprite cardFrontGold;
+
+    public GameObject prefabCard;
+    public GameObject prefabSprite;
+    
     public PT_XMLReader xmlr;
     public List<string> cardNames;
     public List<Card> cards;
