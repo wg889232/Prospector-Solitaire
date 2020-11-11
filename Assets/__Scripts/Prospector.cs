@@ -9,7 +9,8 @@ public class Prospector : MonoBehaviour
     static public Prospector S;
 
     public TextAsset deckXML;
-
+    
+    [Header("Set Dynamically")]
     public Deck deck;
 
     void Awake()
