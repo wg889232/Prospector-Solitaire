@@ -14,6 +14,18 @@ public class Card : MonoBehaviour
 
     public GameObject back;
     public CardDefinition def;
+
+    public bool faceUp
+    {
+        get
+        {
+            return (!back.activeSelf);
+        }
+        set
+        {
+            back.SetActive(!value);
+        }
+    }
 }
 
 [System.Serializable]
