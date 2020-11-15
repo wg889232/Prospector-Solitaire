@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string suit;
+    public int rank;
+    public Color color = Color.black;
+    public string colS = "Black";
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<GameObject> decoGOs = new List<GameObject>();
+    public List<GameObject> pipGOs = new List<GameObject>();
+
+    public GameObject back;
+    public CardDefinition def;
 }
 
 [System.Serializable]
