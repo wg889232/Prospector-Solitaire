@@ -219,6 +219,7 @@ MonoBehaviour:
   decorators: []
   cardDefs: []
   deckAnchor: {fileID: 0}
+  startFaceUp: 1
 --- !u!20 &827460512
 Camera:
   m_ObjectHideFlags: 0
