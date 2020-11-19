@@ -13,7 +13,7 @@ public enum eCardState
 public class CardProspector : Card
 {
     public eCardState state = eCardState.drawpile;
-    public List<CardProspector> hiddenby = new List<CardProspector>();
+    public List<CardProspector> hiddenBy = new List<CardProspector>();
     public int layoutID;
     public SlotDef slotDef;
 
