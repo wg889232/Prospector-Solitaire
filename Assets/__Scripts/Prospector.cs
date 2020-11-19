@@ -187,6 +187,7 @@ public class Prospector : MonoBehaviour
                 MoveToDiscard(target);
                 MoveToTarget(Draw());
                 UpdateDrawPile();
+                ScoreManager.EVENT(eScoreEvent.mine);
                 break;
 
             case eCardState.tableau:
@@ -237,11 +238,13 @@ public class Prospector : MonoBehaviour
     {
         if (won)
         {
-            print("GameOver. You won! :)");
+            //print("GameOver. You won! :)");
+            ScoreManager.EVENT(eScoreEvent.gameWin);
         }
         else
         {
-            print("Game Over. You Lost. :(");
+            //print("Game Over. You Lost. :(");
+            ScoreManager.EVENT(eScoreEvent.gameLose);
         }
 
         SceneManager.LoadScene("__Prospector_Scene_0");
