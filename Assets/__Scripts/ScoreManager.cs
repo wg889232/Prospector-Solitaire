@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum eScoreEvent
 {
@@ -18,9 +19,11 @@ public class ScoreManager : MonoBehaviour
     static public int SCORE_FROM_PREV_ROUND = 0;
     static public int HIGH_SCORE = 0;
 
-    public int chain = 0;
-    public int scoreRun = 0;
+    public int chain = 1;
+    public int scoreRun = 1;
     public int score = 0;
+    public GameObject scoreboard;
+    public Text scoreGT;
 
     void Awake()
     {
@@ -55,19 +58,23 @@ public class ScoreManager : MonoBehaviour
 
     void Event(eScoreEvent evt)
     {
+        scoreboard = GameObject.Find("Scoreboard");
+        scoreGT = scoreboard.GetComponent<Text>();
+
         switch (evt)
         {
             case eScoreEvent.draw:
             case eScoreEvent.gameWin:
             case eScoreEvent.gameLose:
-                chain = 0;
+                chain = 1;
                 score += scoreRun;
-                scoreRun = 0;
+                scoreRun = 1;
                 break;
 
             case eScoreEvent.mine:
                 chain++;
                 scoreRun += chain;
+                scoreGT.text = scoreRun.ToString();
                 break;
         }
 
