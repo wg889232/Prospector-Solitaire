@@ -391,6 +391,10 @@ MonoBehaviour:
   xOffset: 3
   yOffset: -2.5
   layoutCenter: {x: 0, y: 0, z: 0}
+  fsPosMid: {x: 0.5, y: 0.9}
+  fsPosRun: {x: 0.5, y: 0.75}
+  fsPosMid2: {x: 0.4, y: 1}
+  fsPosEnd: {x: 0.5, y: 0.95}
   deck: {fileID: 0}
   layout: {fileID: 0}
   drawPile: []
@@ -398,6 +402,7 @@ MonoBehaviour:
   target: {fileID: 0}
   tableau: []
   discardPile: []
+  fsRun: {fileID: 0}
 --- !u!114 &827460515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +461,8 @@ MonoBehaviour:
   chain: 0
   scoreRun: 0
   score: 0
+  scoreboard: {fileID: 0}
+  scoreGT: {fileID: 0}
 --- !u!1 &1017159517
 GameObject:
   m_ObjectHideFlags: 0
