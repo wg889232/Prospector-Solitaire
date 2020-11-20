@@ -59,7 +59,12 @@ public class Card : MonoBehaviour
 
                 case "face":
                 default:
-                    tSR.sortingOrder = sOrd + 1;
+                    if (faceUp)
+                    {
+                        tSR.sortingOrder = sOrd + 3;
+                        this.GetComponent<SpriteRenderer>().sortingOrder = sOrd + 2;
+                    }
+                    else { tSR.sortingOrder = sOrd + 1; }
                     break;
             }
         }
