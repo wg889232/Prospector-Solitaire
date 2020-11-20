@@ -73,7 +73,7 @@ public class ScoreManager : MonoBehaviour
 
             case eScoreEvent.mine:
                 chain++;
-                scoreRun += chain;
+                if (CheckIfGold(Prospector.S.GetTarget())) { scoreRun += (chain*2); } else { scoreRun += chain; }
                 scoreGT.text = scoreRun.ToString();
                 break;
         }
@@ -101,6 +101,12 @@ public class ScoreManager : MonoBehaviour
                 print("score: " + score + " scoreRun: " + scoreRun + " chain: " + chain);
                 break;
         }
+    }
+
+    public bool CheckIfGold(CardProspector cTarget)
+    {
+        if (cTarget.tag == "Gold") return (true);
+        return (false);
     }
 
     static public int CHAIN { get { return S.chain; } }

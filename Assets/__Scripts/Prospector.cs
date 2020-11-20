@@ -369,4 +369,9 @@ public class Prospector : MonoBehaviour
                 break;
         }
     }
+
+    public CardProspector GetTarget()
+    {
+        return target;
+    }
 }

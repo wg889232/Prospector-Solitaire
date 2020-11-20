@@ -18,6 +18,7 @@ public class Deck : MonoBehaviour
     public Sprite cardFrontGold;
 
     public GameObject prefabCard;
+    public GameObject prefabCardGold;
     public GameObject prefabSprite;
     
     public PT_XMLReader xmlr;
@@ -144,7 +145,14 @@ public class Deck : MonoBehaviour
 
     private Card MakeCard(int cNum)
     {
-        GameObject cgo = Instantiate(prefabCard) as GameObject;
+        GameObject cgo;
+        if (Random.Range(1, 10) > 1) { 
+            cgo = Instantiate(prefabCard) as GameObject;
+        }
+        else
+        {
+            cgo = Instantiate(prefabCardGold) as GameObject;
+        }
 
         cgo.transform.parent = deckAnchor;
         Card card = cgo.GetComponent<Card>();
@@ -263,7 +271,13 @@ public class Deck : MonoBehaviour
     {
         _tGO = Instantiate(prefabSprite) as GameObject;
         _tSR = _tGO.GetComponent<SpriteRenderer>();
-        _tSR.sprite = cardBack;
+        if (card.tag == "Gold") { 
+            _tSR.sprite = cardBackGold; 
+        } 
+        else
+        {
+            _tSR.sprite = cardBack;
+        }
         _tGO.transform.SetParent(card.transform);
         _tGO.transform.localPosition = Vector3.zero;
         _tSR.sortingOrder = 2;
